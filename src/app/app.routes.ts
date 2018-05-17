@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { ModuleWithProviders } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const appRoutes: Routes = [
     {
@@ -13,6 +14,10 @@ export const appRoutes: Routes = [
     {
         path: '',
         component: HomepageComponent
+    },
+    {
+        path: '',
+        component: DashboardComponent
     }
 ]
 

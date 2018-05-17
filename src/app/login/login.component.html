@@ -1,3 +1,72 @@
-<p>
-  login works!
-</p>
+  <!-- Header -->
+  <header class="login-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-11 offset-md-1">
+          <a href="javascript::"><img src="../../assets/images/industry-logo.png" alt="" class="img-fluid"/></a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- /Header -->
+
+  <!-- Main Content -->
+  <main class="login-main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="user-account-frame">
+            <!-- header -->
+            <div class="user-account-header">
+              <h1>Dashboard for Artists</h1>
+              <p>Please login to your account.</p>
+            </div>
+            <!-- body -->
+            <div class="user-account-body">
+              <div class="body-frame">
+                <a href="javascript:;" class="account-link blue-color" (click)="facebookLogin()"><i class="fab fa-facebook-f"></i> Log in with Facebok</a>
+                <a href="javascript:;" class="account-link orange-color" id="googleBtn"><i class="fab fa-google"></i> Log in with Google</a>
+                <p class="or-text">OR</p>
+                <form [formGroup]="loginForm">
+                  <!-- <div class="error-msg">Incorrect e-mail or password</div> -->
+                  <div class="form-group">
+                    <input class="form-control" formControlName="email" type="text" placeholder="E-mail"/>
+                  </div>
+                  <div *ngIf="loginForm.controls['email'].errors && loginForm.controls['email'].touched" class="error-msg">
+                    <div [hidden]="!loginForm.controls['email'].errors.required">You have to fill in Email to login.</div>
+                    <div [hidden]="!loginForm.controls['email'].errors.minlength">Min 5 characters required.</div>
+                    <div [hidden]="!loginForm.controls['email'].errors.maxlength">Max 50 characters allowed.</div>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" formControlName="password" type="password" placeholder="Password"/>
+                    <div class="forgot-link"><a href="javascript:;" data-toggle="modal" data-target="#passwordModal">Forgot Password&#63;</a></div>
+                  </div>
+                  <div *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].touched" class="error-msg">
+                    <div [hidden]="!loginForm.controls['password'].errors.required">You have to fill in Password to login.</div>
+                    <div [hidden]="!loginForm.controls['password'].errors.minlength">Minimum 8 characters required.</div>
+                    <div [hidden]="!loginForm.controls['password'].errors.maxlength">Maximum 30 characters allowed.</div>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" class="btn-block account-link pink-color" value="Log in" (click)="login()"[disabled]="!loginForm.valid" />
+                  </div>
+                </form>
+                <p class="term-link">By signing in, you agre to our <br> <a href="javascript:;">Terms of Use</a> &amp; <a href="javascript:;">Privacy Policy</a></p>
+              </div>
+            </div>
+            <!-- footer -->
+            <div class="user-account-footer">
+              <h2>Don’t have an account?</h2>
+              <p>Sign up on the app.</p>
+              <figure>
+                <a href="javascript:;"><img alt="App Store" class="img-fluid" src="../../assets/images/app-store.png" width="94" height="29" /></a>
+                <a href="javascript:;"><img alt="Play Store" class="img-fluid" src="../../assets/images/play-store.png" width="99" height="29" /></a>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- /Main Content -->
+
+  <app-footer></app-footer>
