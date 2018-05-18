@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   busy: Promise<any>;
+  gService: Promise<any>;
   auth2: any;  
   constructor(
     private formBuilder: FormBuilder,
@@ -55,16 +56,21 @@ export class LoginComponent implements OnInit {
       (googleUser) => {
 
         let profile = googleUser.getBasicProfile();
-        console.log('Token || ' + googleUser.getAuthResponse().id_token);
-        console.log('ID: ' + profile.getId());
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail());
-        //YOUR CODE HERE
-
-
+        let userDetails = {
+          profile,
+          loginType: 3
+        }
+        this.gService = this.service.signup(userDetails).then(
+          (res: any) => {
+            if(res.status == 200){
+              localStorage.setItem('token', res.data.token);
+              this.toastr.success("Login successful");
+              this._router.navigate(['/dashboard']);
+            }
+          }
+        )
       }, (error) => {
-        alert(JSON.stringify(error, undefined, 2));
+        console.log(JSON.stringify(error, undefined, 2));
       });
   }
 
