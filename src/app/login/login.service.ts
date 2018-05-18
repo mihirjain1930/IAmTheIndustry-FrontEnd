@@ -16,4 +16,9 @@ export class LoginService {
       toPromise().then((res: Response) => res.json());
   }
 
+  signup(userDetails) {
+    return this.http.post(`${this.BASE_URL}user/usersignin`, {userDetails}).
+      toPromise().then((res: Response) => res.json());
+  }
+
 }

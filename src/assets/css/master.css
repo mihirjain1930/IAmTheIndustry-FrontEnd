@@ -18,6 +18,130 @@ input[type="submit"]{
     display:table-cell; 
     vertical-align:middle; 
 }
+/* header */
+.main-header{
+    padding: 1.25rem 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #f1f1f1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; 
+}
+.header-left a {
+    font-weight: 600;
+    color: #333;
+    display: inline-block;
+    margin-left: 20px;
+}
+.header-left a:hover {
+    color: #000;
+    text-decoration: none;
+    -webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,1);
+        box-shadow: 0px 1px 0px 0px rgba(0,0,0,1);
+}
+.header-right .wallet {
+    float: left;
+    color: #fb449e;
+    font-weight: 600;
+    font-size: 1.167rem;
+    background-image: url(images/wallet.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    margin-top: 8px;
+}
+.header-right .post { 
+    margin: 0 20px;
+    float: left;
+}
+.header-right .post select {
+    border: 1px solid #333;
+    border-radius: 5px;
+    width: 110px;
+    height: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    padding: 0 4px;
+    line-height: 25px;
+    margin-top: 5px;
+}
+.header-right .post select:focus { 
+    outline: none;
+}
+.header-right .dropdown {
+    float: left;
+}
+.header-right .btn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 1.167rem;
+    color: #333;
+}
+.header-right .btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+.header-right .btn img {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border: 1px solid rgba(0,0,0,0.5);
+    margin-right: 3px;
+}
+.header-right .dropdown-menu {
+    right:0;
+    padding: 0;
+}
+.header-right .dropdown-item {
+    font-size: 1.167rem;
+    color: #333;
+    padding: 6px 10px;
+}
+.header-right .dropdown-item:first-child {
+    border-radius: 2px 2px 0 0;
+}
+.header-right .dropdown-item:last-child {
+    border-radius: 0 0 2px 2px;
+}
+.header-right .dropdown-item + .dropdown-item {
+    border-top: 1px solid rgba(0,0,0,0.15);
+}
+.header-right .dropdown-item:hover {
+    color: #fff;
+    background-color: #474747;
+}
+
+/* main */
+.main {
+    padding-top: 65px;
+    letter-spacing: 0.08rem;
+    background-color: #242424;
+}
+.content {
+    margin-left: 281px;
+    background-color: #fff;
+    min-height:720px;
+    padding-left: 65px;
+}
+.frame970 {
+    max-width: 970px;
+    padding-top: 30px;
+}
+.content .title {
+    font-size: 1.167rem;
+    text-transform: uppercase;
+}
+.content .title span {
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+
+
+/* footer */
 .main-footer {
     letter-spacing: 0.08rem;
 }
