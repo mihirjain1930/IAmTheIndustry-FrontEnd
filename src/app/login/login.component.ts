@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { FormBuilder, FormGroup, Validators as Validators } from '@angular/forms';
 import { LoginService } from './login.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute, Params, Route } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { FacebookService, InitParams, LoginResponse } from 'ng2-facebook-sdk';
+import { environment } from './../../environments/environment';
 declare const gapi: any;
 
 @Component({
@@ -18,9 +19,12 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   busy: Promise<any>;
   gService: Promise<any>;
-  auth2: any;  
+  auth2: any;
+  public Google_App_Id: string = environment.config.GOOGLE_CLIENT_ID;
+  public Fb_App_Id: string = environment.config.FB_APP_ID;
   constructor(
     private formBuilder: FormBuilder,
+    private zone: NgZone,
     private _router: Router,
     private service: LoginService,
     private toastr: ToastrService,
@@ -28,6 +32,8 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.googleInit();
+    this.fb.init(this.initParams);
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(50)])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(30)])]
@@ -35,7 +41,7 @@ export class LoginComponent implements OnInit {
   }
 
   initParams: InitParams = {
-    appId: "312645405934882",
+    appId: this.Fb_App_Id,
     version: 'v1.0',
     xfbml: true
   }
@@ -43,7 +49,7 @@ export class LoginComponent implements OnInit {
   googleInit() {
     gapi.load('auth2', () => {
       this.auth2 = gapi.auth2.init({
-        client_id: '811009371370-ej6g6d375vg7lfhrkqb2srkp5fdi5s8e.apps.googleusercontent.com',
+        client_id: this.Google_App_Id,
         cookiepolicy: 'single_host_origin',
         scope: 'profile email'
       });
@@ -54,7 +60,6 @@ export class LoginComponent implements OnInit {
   public attachSignin(element) {
     this.auth2.attachClickHandler(element, {},
       (googleUser) => {
-
         let profile = googleUser.getBasicProfile();
         let userDetails = {
           profile,
@@ -62,21 +67,19 @@ export class LoginComponent implements OnInit {
         }
         this.gService = this.service.signup(userDetails).then(
           (res: any) => {
-            if(res.status == 200){
+            if(res.status == 200) {
               localStorage.setItem('token', res.data.token);
               this.toastr.success("Login successful");
-              this._router.navigate(['/dashboard']);
+              this.zone.run(() => {
+                this._router.navigate(['/dashboard']);
+              });
+              
             }
           }
         )
       }, (error) => {
         console.log(JSON.stringify(error, undefined, 2));
       });
-  }
-
-  ngAfterViewInit(){
-    this.googleInit();
-    this.fb.init(this.initParams);
   }
 
   login() {
