@@ -82,24 +82,6 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  login() {
-    var user = this.loginForm.value;
-    console.log(this.loginForm.value);
-    this.busy = this.service.login(user).then(
-      (res: any) => {
-        if(res.status == 200){
-          console.log('login successful', res.status);
-          // this.toastr.success("Message send successfully to your email");
-          // this._router.navigate(['/']);
-        }
-        else{
-            console.log('login failed', res.status)
-            // this.toastr.error("Please enter a valid email id");
-        } 
-      }
-    )
-  }
-
   facebookLogin() {
     this.fb.login()
       .then((response: LoginResponse) => {

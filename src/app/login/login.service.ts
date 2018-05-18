@@ -11,13 +11,8 @@ export class LoginService {
   constructor(private _router: Router, private http: Http) { }
   public BASE_URL: string = environment.config.BASE_URL;
 
-  login(user) {
-    return this.http.post(`${this.BASE_URL}user/userLogin`, {user}).
-      toPromise().then((res: Response) => res.json());
-  }
-
   signup(userDetails) {
-    return this.http.post(`${this.BASE_URL}user/usersignin`, {userDetails}).
+    return this.http.post(`${this.BASE_URL}user/usersignup`, {userDetails}).
       toPromise().then((res: Response) => res.json());
   }
 
