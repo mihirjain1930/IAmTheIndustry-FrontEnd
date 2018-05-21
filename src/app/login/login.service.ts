@@ -16,4 +16,14 @@ export class LoginService {
       toPromise().then((res: Response) => res.json());
   }
 
+  getDetails(token) {
+    return this.http.get(`${this.BASE_URL}user/userdetails/${token}`).
+      toPromise().then((res: Response) => res.json());
+  }
+
+  logoutUser(email) {
+    return this.http.get(`${this.BASE_URL}user/logout/${email}`).
+      toPromise().then((res: Response) => res.json());
+  }
+
 }
