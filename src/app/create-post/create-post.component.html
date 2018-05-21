@@ -1,0 +1,154 @@
+<app-login-header></app-login-header>
+<!-- Main Content -->
+ <main class="main clearfix">
+  <!-- sidebar -->
+  <div class="left-sidebar">
+    <div class="sidebar-content">
+      <div class="user-summary clearfix">
+        <span><img src="../../assets/images/user-avtar.png" alt="user avtrar" width="50" height="50" class="img-fluid" /></span>
+        <div class="summary">
+          <h6>Shinobi Ninja</h6>
+          <small>@shinobininja</small>
+          <p>New York, NY | Indie-Rock <span>$21,655</span> per single</p>
+        </div>
+      </div>
+
+      <p class="bio"><small>BIO</small> rock hard. It’s what we do. Featured on Billboard, MTV & More.</p>
+      
+      <div class="follower-content clearfix">
+        <div>
+          <span class="float-left">POSTS</span>
+          <span class="float-right">22</span>
+        </div>
+        <div>
+          <span class="float-left">SUBSCRIBERS</span>
+          <span class="float-right">28</span>
+        </div>
+        <div>
+          <span class="float-left">FOLLOWERS</span>
+          <span class="float-right">3.4K</span>
+        </div>
+        <div>
+          <span class="float-left">COMMENTS</span>
+          <span class="float-right">303</span>
+        </div>
+      </div>
+    </div>
+
+    <ul>
+      <li class="active"><a href="javascript:;">DASHBOARD</a></li>
+      <li class=""><a href="javascript:;">PAYOUTS</a></li>
+      <li class=""><a href="javascript:;">YOUR SUBSCRIBERS</a></li>
+      <li class=""><a href="javascript:;">POSTS INSIGHTS</a></li>
+    </ul>
+  </div>
+  <!-- /sidebar -->
+
+  <!-- Dashboard Content -->
+  <div class="content ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-11">
+          <h1 class="title"><span>CREATE POST</span></h1>
+          <div class="light-gray-bg m-height125 song-upload-frame">
+            <div class="upload-btn">
+              <a href="javascript:;">Upload songs or drag and drop</a>
+              <input type="file" value="Upload songs or drag and drop" />
+            </div>
+            <p class="text-center">1GB Max File Size / 2GB Total Storage <br> Supported file types: WAV, MP3, AIF, FLAC, AAC</p>
+          </div>
+  
+          <div class="light-gray-bg m-height125 song-upload-frame embed-link">
+            <p>You have the option to embed a URL instead.</p>
+            <div class="link-box"><input type="text" class="form-control" placeholder="Enter an embeddable URL here (Youtube or Vimeo) </>" /></div>
+          </div>
+
+          <div class="required-text">
+            <span>Fields Required ^</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 cover-photo">
+          <div class="post-cover-image">
+            <p>COVER IMAGE*</p>
+            <figure><img class="img-fluid" src="../../assets/images/default-post.jpg" alt="post cover" /></figure>
+          </div>
+          <div class="upload-btn">
+            <a href="javascript:;">Upload image</a>
+            <input type="file" value="Upload songs or drag and drop" />
+          </div>
+          <p>Minimum 600x600 px. Max 20MB</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-5 offset-lg-1 post-form">
+          <form action="javascript:;" method="POST">
+            <div class="form-group">
+              <label>POST TITLE*</label> <span class="count">0/150</span>
+              <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>DESCRIPTION</label> <span class="count">0/1024</span>
+              <textarea class="form-control"></textarea>
+            </div>
+            <div class="clearfix">
+              <div class="col-50">
+                <div class="form-group">
+                  <label>PRIMARY GENRE*</label>
+                  <select class="form-control"><option>Select Gener</option></select>
+                </div>
+              </div>
+              <div class="col-50">
+                <div class="form-group">
+                  <label>TYPE</label>
+                  <select class="form-control"><option>Select Type</option></select>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix pad-top20">
+              <div class="col-50">
+                <div class="form-group">
+                  <label>PRIYACY*</label>
+                  <p>Who can see this post?</p>
+                  <select class="form-control"><option>Public</option></select>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <div class="post-subscribe">
+            <h6>Do you want to charge your subscribers for this post?</h6>
+            <div class="pad-top15">
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked>
+                  <label class="custom-control-label" for="customRadioInline1">Yes, <span>12 subscribers currently subscribing a total of $75,00.</span></label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                  <label class="custom-control-label" for="customRadioInline2">No, <span>this is a free post.</span></label>
+                </div>
+            </div>
+
+            <div class="post-btn">
+              <button class="btn pink-bg" type="submit">Post</button>
+              <button class="btn" type="button" data-toggle="modal" data-target="#cancelModal">Cancel</button>
+              <p>* - Required Field</p>
+            </div>
+
+            <p><span>IMPORTANT:</span> By sharing, you confirm your posts and sounds comply <br> with out <a href="javascript:;">Terms of Use</a> and don’t infringe on anyone’s rights.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Dashboard Content -->
+</main>
+<!-- /Main Content -->
+
+
+
+<app-footer></app-footer>

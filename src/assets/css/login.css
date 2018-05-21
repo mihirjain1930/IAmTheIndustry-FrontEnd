@@ -158,12 +158,7 @@ p.term-link {
     }
 }
 @media (max-width:420px) {
-    .newsletter-input {
-        padding-right: 0;
-    }
-    .newsletter-input .btn {
-        position: relative;
-        margin-top: 10px;
-        width: 100%;
+    .login-main-content {
+        padding: 3.333rem 0;
     }
 }

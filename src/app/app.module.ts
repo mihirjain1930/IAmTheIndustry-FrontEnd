@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AuthGaurdService } from './service/auth-gaurd.service';
     HomepageComponent,
     LoginHeaderComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreatePostComponent
   ],
   imports: [
     FormsModule,

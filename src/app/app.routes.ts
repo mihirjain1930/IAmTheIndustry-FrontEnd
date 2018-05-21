@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 export const appRoutes: Routes = [
     {
@@ -19,6 +20,11 @@ export const appRoutes: Routes = [
     {
         path: 'dashboard',
         component: DashboardComponent,
+        canActivate: [AuthGaurdService]
+    },
+    {
+        path: 'create-post',
+        component: CreatePostComponent,
         canActivate: [AuthGaurdService]
     }
 ]
