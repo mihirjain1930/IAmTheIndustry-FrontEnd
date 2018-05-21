@@ -12,6 +12,7 @@ import { Router, ActivatedRoute, Params, Route } from '@angular/router';
 export class LoginHeaderComponent implements OnInit {
 
   name: string;
+  picture: string;
   userEmail: string;
   getDetail: Promise<any>;
   logoutUser: Promise<any>;
@@ -31,6 +32,7 @@ export class LoginHeaderComponent implements OnInit {
       (res: any) => {
         if (res.status == 200) {
           this.name = res.data.name;
+          this.picture = res.data.picture;
           this.userEmail = res.data.email;
         }
       }

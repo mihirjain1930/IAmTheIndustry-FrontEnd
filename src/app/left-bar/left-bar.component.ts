@@ -11,6 +11,7 @@ export class LeftBarComponent implements OnInit {
 
   getDetail: Promise<any>;
   name: string;
+  picture: string;
   constructor(
     private service: LoginService
   ) { }
@@ -25,6 +26,7 @@ export class LeftBarComponent implements OnInit {
       (res: any) => {
         if (res.status == 200) {
           this.name = res.data.name;
+          this.picture = res.data.picture;
         }
       }
     )
