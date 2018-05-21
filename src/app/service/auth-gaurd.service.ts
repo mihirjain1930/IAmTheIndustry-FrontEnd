@@ -8,7 +8,7 @@ export class AuthGaurdService {
   constructor(private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem('id')) {
       return true;
     }
     else {
