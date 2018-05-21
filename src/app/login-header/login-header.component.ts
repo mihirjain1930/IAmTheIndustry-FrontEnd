@@ -26,8 +26,8 @@ export class LoginHeaderComponent implements OnInit {
   }
 
   getDetails() {
-    let token = localStorage.getItem('token');
-    this.getDetail = this.service.getDetails(token).then(
+    let id = localStorage.getItem('id');
+    this.getDetail = this.service.getDetails(id).then(
       (res: any) => {
         if (res.status == 200) {
           this.name = res.data.name;
@@ -41,7 +41,7 @@ export class LoginHeaderComponent implements OnInit {
     this.logoutUser = this.service.logoutUser(this.userEmail).then(
       (res:any) => {
         if (res.status == 200) {
-          localStorage.removeItem('token');
+          localStorage.removeItem('id');
           this._router.navigate(['/']);
         }
         else {

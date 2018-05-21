@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
         this.gService = this.service.signup(userDetails).then(
           (res: any) => {
             if(res.status == 200) {
-              localStorage.setItem('token', res.data.token);
+              localStorage.setItem('id', res.data.social_id);
               this.zone.run(() => {
                 this.toastr.success("Login successful");
                 this._router.navigate(['/create-post']);
