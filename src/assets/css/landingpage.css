@@ -6,6 +6,7 @@
 .landing-header .header-right-col a {
     font-size: 1.167rem;
     color: #333;
+    margin-left: 1rem;
 }
 .landing-header .header-right-col a:hover {
     color: #000;
@@ -18,7 +19,6 @@
     line-height: 32px;
     text-align: center;
     border: 1px solid #333;
-    margin-left: 3.033rem;
 }
 .landing-header .header-right-col .upload-link:hover {
     border-color: #000;
