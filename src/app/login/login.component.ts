@@ -6,6 +6,7 @@ import { Router, ActivatedRoute, Params, Route } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { FacebookService, InitParams, LoginResponse } from 'ng2-facebook-sdk';
 import { environment } from './../../environments/environment';
+import { environmentProd } from '../../environments/environment.prod';
 declare const gapi: any;
 
 @Component({
@@ -67,7 +68,7 @@ export class LoginComponent implements OnInit {
         }
         this.gService = this.service.signup(userDetails).then(
           (res: any) => {
-            if(res.status == 200) {
+            if(res.status == 400 || res.status == 200) {
               localStorage.setItem('id', res.data._id);
               this.zone.run(() => {
                 this.toastr.success("Login successful");
