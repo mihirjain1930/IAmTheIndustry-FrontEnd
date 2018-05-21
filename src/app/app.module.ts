@@ -16,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { LeftBarComponent } from './left-bar/left-bar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CreatePostComponent } from './create-post/create-post.component';
     LoginHeaderComponent,
     FooterComponent,
     DashboardComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    LeftBarComponent
   ],
   imports: [
     FormsModule,

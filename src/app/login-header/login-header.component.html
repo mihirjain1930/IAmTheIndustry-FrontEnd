@@ -17,12 +17,12 @@
         </div>
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="../../assets/images/user-avtar.png" alt="user avtar"> Shinobi Ninja
+              <img src="../../assets/images/user-avtar.png" alt="user avtar"> {{name}}
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="javascript:;">Message</a>
             <a class="dropdown-item" href="javascript:;">Setting</a>
-            <a class="dropdown-item" href="javascript:;">Logout</a>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
           </div>
         </div>
       </div>
