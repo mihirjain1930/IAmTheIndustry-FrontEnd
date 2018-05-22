@@ -25,7 +25,7 @@ export const appRoutes: Routes = [
     {
         path: 'create-post',
         component: CreatePostComponent,
-        canActivate: [AuthGaurdService]
+        // canActivate: [AuthGaurdService]
     }
 ]
 
