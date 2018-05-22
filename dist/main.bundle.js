@@ -183,7 +183,6 @@ var appRoutes = [
     {
         path: 'create-post',
         component: __WEBPACK_IMPORTED_MODULE_5__create_post_create_post_component__["a" /* CreatePostComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_4__service_auth_gaurd_service__["a" /* AuthGaurdService */]]
     }
 ];
 var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule */].forRoot(appRoutes, { useHash: true });
@@ -401,7 +400,7 @@ module.exports = ""
 /***/ "./src/app/left-bar/left-bar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <!-- sidebar -->\n  <div class=\"left-sidebar\">\n    <div class=\"sidebar-content\">\n      <div class=\"user-summary clearfix\">\n        <span><img [src]=\"picture\" alt=\"user avtrar\" width=\"50\" height=\"50\" class=\"img-fluid\" /></span>\n        <div class=\"summary\">\n          <h6>{{name}}</h6>\n          <small>@shinobininja</small>\n          <p>New York, NY | Indie-Rock <span>$21,655</span> per single</p>\n        </div>\n      </div>\n\n      <p class=\"bio\"><small>BIO</small> rock hard. It’s what we do. Featured on Billboard, MTV & More.</p>\n      \n      <div class=\"follower-content clearfix\">\n        <div>\n          <span class=\"float-left\">POSTS</span>\n          <span class=\"float-right\">22</span>\n        </div>\n        <div>\n          <span class=\"float-left\">SUBSCRIBERS</span>\n          <span class=\"float-right\">28</span>\n        </div>\n        <div>\n          <span class=\"float-left\">FOLLOWERS</span>\n          <span class=\"float-right\">3.4K</span>\n        </div>\n        <div>\n          <span class=\"float-left\">COMMENTS</span>\n          <span class=\"float-right\">303</span>\n        </div>\n      </div>\n    </div>\n\n    <ul>\n      <li class=\"active\"><a href=\"javascript:;\">DASHBOARD</a></li>\n      <li class=\"\"><a href=\"javascript:;\">PAYOUTS</a></li>\n      <li class=\"\"><a href=\"javascript:;\">YOUR SUBSCRIBERS</a></li>\n      <li class=\"\"><a href=\"javascript:;\">POSTS INSIGHTS</a></li>\n    </ul>\n  </div>\n  <!-- /sidebar -->"
+module.exports = "  <!-- sidebar -->\n  <div class=\"left-sidebar\">\n    <div class=\"sidebar-content\">\n      <div class=\"user-summary clearfix\">\n        <span *ngIf=\"picture\"><img [src]=\"picture\" alt=\"user avtrar\" width=\"50\" height=\"50\" class=\"img-fluid\" /></span>\n        <span *ngIf=\"!picture\"><img src=\"../../assets/images/user-avtar.png\" alt=\"user avtrar\" width=\"50\" height=\"50\" class=\"img-fluid\" /></span>\n        <div class=\"summary\">\n          <h6 *ngIf=\"name\">{{name}}</h6>\n          <h6 *ngIf=\"!name\">Shinjobi Ninja</h6>\n          <small>@shinobininja</small>\n          <p>New York, NY | Indie-Rock <span>$21,655</span> per single</p>\n        </div>\n      </div>\n\n      <p class=\"bio\"><small>BIO</small> rock hard. It’s what we do. Featured on Billboard, MTV & More.</p>\n      \n      <div class=\"follower-content clearfix\">\n        <div>\n          <span class=\"float-left\">POSTS</span>\n          <span class=\"float-right\">22</span>\n        </div>\n        <div>\n          <span class=\"float-left\">SUBSCRIBERS</span>\n          <span class=\"float-right\">28</span>\n        </div>\n        <div>\n          <span class=\"float-left\">FOLLOWERS</span>\n          <span class=\"float-right\">3.4K</span>\n        </div>\n        <div>\n          <span class=\"float-left\">COMMENTS</span>\n          <span class=\"float-right\">303</span>\n        </div>\n      </div>\n    </div>\n\n    <ul>\n      <li class=\"active\"><a href=\"javascript:;\">DASHBOARD</a></li>\n      <li class=\"\"><a href=\"javascript:;\">PAYOUTS</a></li>\n      <li class=\"\"><a href=\"javascript:;\">YOUR SUBSCRIBERS</a></li>\n      <li class=\"\"><a href=\"javascript:;\">POSTS INSIGHTS</a></li>\n    </ul>\n  </div>\n  <!-- /sidebar -->"
 
 /***/ }),
 
@@ -466,7 +465,7 @@ module.exports = ""
 /***/ "./src/app/login-header/login-header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <!-- Header -->\n  <header class=\"main-header\">\n    <div class=\"container-fluid clearfix\">\n      <div class=\"float-left header-left\">\n        <img src=\"../../assets/images/industry-circle-logo.png\" alt=\"\" width=\"36\" height=\"34\" class=\"img-fluid\" />\n        <a href=\"javascript:;\">Home</a>\n      </div>\n      <div class=\"float-right header-right\">\n        <span class=\"wallet\">$ 23.5 K</span>\n        <div class=\"post\">\n          <select>\n            <option>Pre Post</option>\n            <option>Pre Post 1</option>\n            <option>Pre Post 2</option>\n            <option>Pre Post 3</option>\n          </select>\n        </div>\n        <div class=\"dropdown\">\n          <button class=\"btn dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              <img [src]=\"picture\" alt=\"user avtar\"> {{name}}\n          </button>\n          <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n            <a class=\"dropdown-item\" href=\"javascript:;\">Message</a>\n            <a class=\"dropdown-item\" href=\"javascript:;\">Setting</a>\n            <a class=\"dropdown-item\" (click)=\"logout()\">Logout</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </header>\n  <!-- /Header -->"
+module.exports = "  <!-- Header -->\n  <header class=\"main-header\">\n    <div class=\"container-fluid clearfix\">\n      <div class=\"float-left header-left\">\n        <img src=\"../../assets/images/industry-circle-logo.png\" alt=\"\" width=\"36\" height=\"34\" class=\"img-fluid\" />\n        <a href=\"javascript:;\">Home</a>\n      </div>\n      <div class=\"float-right header-right\">\n        <span class=\"wallet\">$ 23.5 K</span>\n        <div class=\"post\">\n          <select>\n            <option>Pre Post</option>\n            <option>Pre Post 1</option>\n            <option>Pre Post 2</option>\n            <option>Pre Post 3</option>\n          </select>\n        </div>\n        <div class=\"dropdown\">\n          <button class=\"btn dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              <img *ngIf=\"picture\" [src]=\"picture\" alt=\"user avtar\"> <label *ngIf=\"name\"> {{name}}</label>\n              <img *ngIf=\"!picture\" src=\"../../assets/images/user-avtar.png\" alt=\"user avtar\"> <label *ngIf=\"!name\"> Shinjobi Ninja</label>\n          </button>\n          <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n            <a class=\"dropdown-item\" href=\"javascript:;\">Message</a>\n            <a class=\"dropdown-item\" href=\"javascript:;\">Setting</a>\n            <a class=\"dropdown-item\" (click)=\"logout()\">Logout</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </header>\n  <!-- /Header -->"
 
 /***/ }),
 
@@ -647,6 +646,21 @@ var LoginComponent = /** @class */ (function () {
         }).catch(function (err) {
             console.log('error while login');
         });
+    };
+    LoginComponent.prototype.login = function () {
+        var _this = this;
+        if (!this.loginForm.valid) {
+            this.zone.run(function () {
+                _this.toastr.error('Please fill the login form');
+                _this._router.navigate(['/create-post']);
+            });
+        }
+        else {
+            this.zone.run(function () {
+                _this.toastr.success("Login successful");
+                _this._router.navigate(['/create-post']);
+            });
+        }
     };
     LoginComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({

@@ -91,4 +91,20 @@ export class LoginComponent implements OnInit {
         console.log('error while login')
       })
   }
+
+  login() {
+    if (!this.loginForm.valid) {
+      this.zone.run(() => {
+        this.toastr.error('Please fill the login form');
+        this._router.navigate(['/create-post']);
+      });
+    }
+    else {
+      this.zone.run(() => {
+        this.toastr.success("Login successful");
+        this._router.navigate(['/create-post']);
+      })
+      
+    }
+  }
 }
