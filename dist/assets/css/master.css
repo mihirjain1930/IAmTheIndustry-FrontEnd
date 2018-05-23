@@ -46,7 +46,7 @@ input[type="submit"]{
     color: #fb449e;
     font-weight: 600;
     font-size: 1.167rem;
-    background-image: url(images/wallet.png);
+    background-image: url(./../images/wallet.png);
     background-position: left top;
     background-repeat: no-repeat;
     padding-left: 30px;
