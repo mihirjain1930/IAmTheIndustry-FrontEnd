@@ -40,17 +40,22 @@ export class LoginHeaderComponent implements OnInit {
   }
 
   logout() {
-    this.logoutUser = this.service.logoutUser(this.userEmail).then(
-      (res:any) => {
-        if (res.status == 200) {
-          localStorage.removeItem('id');
-          this._router.navigate(['/']);
+    if (! this.userEmail) {
+      this._router.navigate(['/']);
+    }
+    else {
+      this.logoutUser = this.service.logoutUser(this.userEmail).then(
+        (res:any) => {
+          if (res.status == 200) {
+            localStorage.removeItem('id');
+            this._router.navigate(['/']);
+          }
+          else {
+            this.toastr.error("Can not logout.");
+          }
         }
-        else {
-          this.toastr.error("Can not logout.");
-        }
-      }
-    )
+      )
+    }
   }
 
 }
