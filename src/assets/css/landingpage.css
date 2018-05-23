@@ -62,7 +62,7 @@
     left: 0;
     content: "";
     color: #333;
-    background-image: url(images/arrow-right.png);
+    background-image: url(./../images/arrow-right.png);
     background-repeat: no-repeat;
     background-position: left top;
     width: 10px;
@@ -147,7 +147,7 @@
         text-align: initial;
     }
     .banner-frame {
-        background-image: url(images/hand-mobile.png);
+        background-image: url(./../images/hand-mobile.png);
         background-position: 98% 35px;
         background-repeat: no-repeat;
         padding-top: 10rem;
